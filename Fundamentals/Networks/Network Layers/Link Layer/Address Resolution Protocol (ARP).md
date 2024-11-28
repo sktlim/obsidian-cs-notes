@@ -8,5 +8,4 @@
 	- ARP module on sending host takes any IP address on same LAN as input, and returns corresponding output
 	- ARP module converts IP address of A into its MAC address so that C knows what to append to the link-layer frame
 
-Test changes
 

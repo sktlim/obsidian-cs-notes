@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fundamentals/Networks/Network Layers/Link Layer/Address Resolution Protocol (ARP).md",
+                "file": "Fundamentals/Networks/Exam Stuff.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Address Resolution Protocol (ARP)"
+              "title": "Exam Stuff"
             }
           }
         ]
@@ -139,60 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fundamentals/Networks/Network Layers/Link Layer/Address Resolution Protocol (ARP).md"
+                "file": "Fundamentals/Networks/Exam Stuff.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Address Resolution Protocol (ARP)"
-            }
-          },
-          {
-            "id": "2ca6e2ce3d6fb699",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "50b7ba059d6d5439",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "7d3881107a2dd5d7",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "86a88a149241d21e",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "df02e3a5f05e3cd0",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "title": "Outline of Exam Stuff"
             }
           },
           {
@@ -216,7 +166,7 @@
             }
           }
         ],
-        "currentTab": 10
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -236,12 +186,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "09edbe69f1ab16ff",
+  "active": "5b46e89927513eeb",
   "lastOpenFiles": [
-    "Fundamentals/Networks/Network Layers/Link Layer/Medium Access Control (MAC) Address.md",
-    "Fundamentals/Networks/Network Layers/Link Layer/Address Resolution Protocol (ARP).md",
-    "ARP example.png",
+    "Fundamentals/Networks/Network Layers/Transport Layer/TCP Congestion Control.md",
+    "Fundamentals/Networks/Network Layers/Network Layer/Data Plane/IPv4.md",
+    "Fundamentals/Networks/Exam Stuff.md",
     "Fundamentals/Networks/Network Layers/Link Layer/Access Links and Protocols.md",
+    "Fundamentals/Networks/Network Layers/Link Layer/Address Resolution Protocol (ARP).md",
+    "Fundamentals/Networks/Network Layers/Link Layer/Medium Access Control (MAC) Address.md",
+    "Diagrams/2d bit parity 1.png",
+    "Diagrams/CSMA.png",
+    "CS Mastery Roadmap.md",
+    "Diagrams/ARP example.png",
     "Fundamentals/Networks/Network Layers/Application Layer/Client-Server Architectures/Dynamic Host Configuration Protocol (DHCP).md",
     "Fundamentals/Networks/Network Layers/Application Layer/Client-Server Architectures/Domain Name Service (DNS).md",
     "Fundamentals/Networks/Network Layers/Application Layer/Client-Server Architectures/Post-Office Protocol (POP3).md",
@@ -250,8 +206,7 @@
     "Fundamentals/Networks/Network Layers/Application Layer/Client-Server Architectures/HTTP.md",
     "Fundamentals/Networks/Content Distribution Networks (CDN).md",
     "Fundamentals/Networks/Network Layers/Application Layer/Client-Server Architectures/SMTP.md",
-    "CSMACD.png",
-    "CSMA.png",
+    "Diagrams/CSMACD.png",
     "Fundamentals/Networks/Network Layers/Link Layer/Multiple Access Protocols/Random Access Protocols",
     "Fundamentals/Networks/Network Layers/Link Layer/Multiple Access Protocols/Channel Partitioning Protocols",
     "Fundamentals/Networks/Network Layers/Link Layer/Multiple Access Protocols",
@@ -263,15 +218,11 @@
     "Interview Questions/Network.md",
     "Fundamentals/Networks/Network Layers/Network Layer/Internet Control Message Protocol (ICMP).md",
     "Fundamentals/Networks/Network Layers/Network Layer/Network Address Translation (NAT).md",
-    "Fundamentals/Networks/Network Layers/Network Layer/Data Plane/IPv4.md",
     "Fundamentals/Networks/Network Layers/Network Layer/Overview.md",
     "Fundamentals/Networks/Network Layers/Network Layer/Data Plane/Data Plane Overview.md",
-    "Fundamentals/Networks/Network Layers/Transport Layer/TCP Congestion Control.md",
     "Fundamentals/Networks/What happens when you type google.com and press enter.md",
-    "Fundamentals/Networks/Network Layers/Transport Layer/User Datagram Protocol (UDP).md",
     "Fundamentals/Networks/Wireless and Mobile Networks",
-    "2d bit parity 2.png",
-    "2d bit parity 1.png",
+    "Diagrams/2d bit parity 2.png",
     "2d bit parity.png",
     "Diagrams/Hot potato routing.png",
     "Diagrams/Error detection and correction scenario.png",
