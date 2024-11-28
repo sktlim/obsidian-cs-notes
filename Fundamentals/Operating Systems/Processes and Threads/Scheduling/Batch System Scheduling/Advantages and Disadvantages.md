@@ -1,0 +1,6 @@
+
+| **Algorithm**                            | **Advantages**                                                                            | **Disadvantages**                                                                                                    |
+| ---------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **First-Come-First-Serve (FCFS)**        | - Simple and easy to implement.  <br>- Fair, as jobs are processed in order of arrival.   | - Poor average waiting time due to **convoy effect**.  <br>- Not suitable for time-sensitive tasks.                  |
+| **Shortest Job First (SJF)**             | - Optimal average waiting time.  <br>- High throughput, especially for short jobs.        | - Risk of starvation for long jobs.  <br>- Requires knowledge of job length, hard to predict dynamically.            |
+| **Shortest Remaining Time First (SRTF)** | - Efficient average waiting time due to preemption.  <br>- Responsive to new short tasks. | - High context-switching overhead.  <br>- Starvation risk for longer jobs.  <br>- Complex to implement in real-time. |

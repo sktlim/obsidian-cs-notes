@@ -1,0 +1,1 @@
+Why is looking up on an SSD faster than a hard disk and describe the differences?

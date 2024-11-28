@@ -1,0 +1,2 @@
+- Wire delay scales poorly compared to transistor performance
+- Today, power management is biggest concern for computer architects

@@ -1,0 +1,1 @@
+- Wireless LAN access based on IEEE 802.11 technology (WiFi) provides shared transmission rates of 100Mbps

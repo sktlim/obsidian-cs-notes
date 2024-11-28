@@ -1,0 +1,41 @@
+Cppcon 2017 Carl Cook talk
+- Measurement is key
+- Slowpath removal
+	![[Cppcon low latency talk.png]]
+	- Lesser branch predictions generated
+	- Less pressure on instruction cache
+- Template-based configuration
+	- Virtual functions and sometimes simple branches can be expensive
+	- Use templates to circumvent
+	- **If you know complete set of things at compile time, can use a template to handle different implementations, and each implementation can be generated using a factory method to instantiate correct type**
+- Prefer lambdas 
+- Memory allocation is costly
+	- Use a pool of pre-allocated objects 
+	- Reuse objects instead of deleting
+		- `delete` involves no system calls
+		- `free` is expensive
+- Don't use exceptions for control flow
+- Prefer templates to branches
+	- If you know complete set of branch outcomes, just use templates to handle them instead of if else
+- Multithreading
+	- Keep data shared between hotpath and everything else to the minimum
+	- Consider sending copies data instead of sharing (single W, single R lock free queue)
+	- If you have to share data, consider not using syncs
+- Data lookups
+	- Textbooks typically suggest normalized data, but looking up this data might be inefficient
+	- Reading a float is 4 bytes, but machine will actually read 64 bytes as its part of the cache line, so just put the data that you need in the object 
+- **Keep the cache hot**
+	- full hot paths only exercised very infrequently; cache has most likely been trampled by non-hotpath data and instructions
+	- **Simple solution:** Run very frequent dummy path through entire system to keep data and instruction cache primed
+- Don't share L3 cache
+	- disable all but 1 core or lock cache
+- Placement `new` can be inefficient
+- std::function may allocate 
+- std::pow is a transcendental function 
+	- it will try to be accurate fast, if not, then accurate slow
+- Avoid system calls
+	- hot path should be on a single system call
+
+Measurement of low latency systems 
+- Profiling: Examining what code is doing
+- Benchmarking: timing speed of system

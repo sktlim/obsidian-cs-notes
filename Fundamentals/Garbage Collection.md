@@ -1,0 +1,1 @@
+https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)#:~:text=Reference%20counting,-Main%20article%3A%20Reference&text=Reference%20counting%20garbage%20collection%20is,when%20a%20reference%20is%20destroyed.

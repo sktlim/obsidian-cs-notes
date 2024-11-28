@@ -1,0 +1,1 @@
+https://en.wikipedia.org/wiki/Content-addressable_memory#:~:text=internet%20routing%20tables.-,Ternary%20CAMs%5Bedit%5D,-CMOS%20Ternary%20CAM
