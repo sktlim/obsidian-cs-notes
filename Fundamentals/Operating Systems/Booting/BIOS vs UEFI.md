@@ -13,7 +13,6 @@ The main difference between UEFI (Unified Extensible Firmware Interface) and BIO
      - UEFI firmware is usually stored in a file on a dedicated partition (EFI System Partition) on the disk rather than in a ROM chip.
 
 ### 2. Boot Process
-
    - **BIOS**:
      - BIOS uses the Master Boot Record (MBR) method to locate the bootloader, which is stored in the first sector of the disk.
      - The MBR is limited to 2 TB of addressable space and supports only four primary partitions per disk.
@@ -26,7 +25,6 @@ The main difference between UEFI (Unified Extensible Firmware Interface) and BIO
  - See [[MBR vs GPT]]
 
 ### 3. Boot Mode: Legacy vs. Secure Boot
-
    - **BIOS**:
      - BIOS operates in "Legacy" mode and doesn’t support advanced security features like Secure Boot.
      - Since it has no mechanism to verify the bootloader or OS, it’s more vulnerable to malware attacks (e.g., bootkits).
@@ -37,7 +35,6 @@ The main difference between UEFI (Unified Extensible Firmware Interface) and BIO
      - UEFI can operate in either Legacy mode (for backward compatibility) or native UEFI mode.
 
 ### 4. Extensibility and Flexibility
-
    - **BIOS**:
      - BIOS is limited in functionality and extensibility due to its design and architecture.
      - It relies heavily on interrupt calls and has limited support for modern hardware, networks, and storage types.
@@ -48,7 +45,6 @@ The main difference between UEFI (Unified Extensible Firmware Interface) and BIO
      - It can also access larger storage volumes and more advanced hardware directly during boot, making it more versatile and capable.
 
 ### 5. Storage Support
-
    - **BIOS**:
      - Limited to MBR-based drives with a 2 TB maximum size.
      - Only supports up to four primary partitions per disk.
@@ -94,3 +90,46 @@ The main difference between UEFI (Unified Extensible Firmware Interface) and BIO
 | **Future**             | Legacy, being phased out    | Modern standard, actively developed |
 
 UEFI is the newer and more advanced replacement for BIOS, supporting modern hardware, security features, and larger storage devices. Most newer computers now ship with UEFI as the default boot firmware.
+
+TARGET DECK: Operating Systems::Booting
+## Flashcards
+
+Q: What architectural limitations make BIOS less powerful than UEFI?
+A: BIOS operates in 16-bit mode with only 1 MB of executable space, limiting speed and features.
+<!--ID: 1748147348097-->
+
+
+Q: Why does UEFI support richer interfaces compared to BIOS?
+A: UEFI runs in 32/64-bit mode and supports GUI and mouse input, unlike BIOS which is text-based and keyboard-only.
+<!--ID: 1748147348103-->
+
+
+Q: How does UEFI’s boot process eliminate the limitations of MBR used by BIOS?
+A: UEFI uses GPT, allowing disks >2 TB and more than four partitions, and can load OS kernels directly from the EFI System Partition.
+<!--ID: 1748147348106-->
+
+
+Q: What security mechanism does UEFI provide that BIOS lacks?
+A: UEFI supports Secure Boot, which ensures only trusted, signed software can run at boot.
+<!--ID: 1748147348109-->
+
+
+Q: Why is BIOS more vulnerable to boot-time malware than UEFI?
+A: BIOS lacks mechanisms to verify bootloaders or OS integrity, making it susceptible to bootkits.
+<!--ID: 1748147348111-->
+
+
+Q: How does UEFI enable greater extensibility and flexibility than BIOS?
+A: UEFI supports modular drivers, applications, and built-in networking, while BIOS is limited by its legacy architecture.
+<!--ID: 1748147348114-->
+
+
+Q: In what way does UEFI improve boot speed over BIOS?
+A: UEFI can bypass legacy boot steps and utilize features like Fast Boot for quicker startup.
+<!--ID: 1748147348116-->
+
+
+Q: What allows UEFI to support remote diagnostics and pre-boot networking?
+A: UEFI has built-in networking capabilities, unlike BIOS which offers minimal or no network support.
+<!--ID: 1748147348118-->
+

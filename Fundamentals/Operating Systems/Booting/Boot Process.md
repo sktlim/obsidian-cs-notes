@@ -98,3 +98,67 @@
 1. As the final step in the boot process, the **X Window System** is loaded.
 2. A service called the **display manager** (e.g., **GDM** or **LightDM**) manages displays, loading the **X server** or **Wayland** (the graphical display system).
 3. The X server provides graphical services to applications, which are referred to as X clients. The display manager also handles user logins and, upon successful login, launches the specified desktop environment (e.g., GNOME, KDE) for the user.
+
+## Flashcards
+
+TARGET DECK: Operating Systems::Booting
+
+Q: Why does the power supply remain in a "soft-off" state when a computer is off?
+A: To allow power-on via the power button or external events like Wake-on-LAN by keeping a minimal standby voltage available to the motherboard.
+<!--ID: 1748147739097-->
+
+
+Q: What is the purpose of the "Power Good" signal from the PSU, and what happens if it's not sent?
+A: It signals that voltages are stable; without it, the CPU and motherboard will not begin execution to prevent unstable behavior.
+<!--ID: 1748147739101-->
+
+
+Q: What does the CPU do immediately after receiving power and a clock signal?
+A: It jumps to a reset vector, a fixed address pointing to firmware, and begins executing instructions stored in BIOS/UEFI ROM.
+<!--ID: 1748147739104-->
+
+
+Q: What’s the significance of POST in early boot, and what issues might it detect?
+A: POST tests RAM, input devices, and essential peripherals. Failures (e.g., bad RAM, missing keyboard) cause beep codes or halt boot.
+<!--ID: 1748147739106-->
+
+
+Q: During the boot process, when and why is a graphics card initialized?
+A: During POST or UEFI init to provide video output for boot diagnostics or UEFI interface; failure to initialize may indicate GPU/firmware issues.
+<!--ID: 1748147739109-->
+
+
+Q: How does UEFI improve device initialization over BIOS during the boot sequence?
+A: It supports advanced device enumeration (e.g., PCIe), graphical output, faster parallel device probing, and Secure Boot.
+<!--ID: 1748147739112-->
+
+
+Q: Why is Secure Boot important in modern SRE/SWE environments?
+A: It prevents unauthorized bootloaders/malware from being executed, protecting system integrity in production or cloud environments.
+<!--ID: 1748147739115-->
+
+
+Q: How does UEFI locate and load the bootloader?
+A: It searches attached devices for an EFI System Partition, checks a boot order, and executes the first signed bootloader it finds.
+<!--ID: 1748147739118-->
+
+
+Q: What is the purpose of `initramfs` in the Linux boot process, and what must it contain?
+A: It’s a temporary root filesystem that must contain drivers and tools to mount the real root filesystem (e.g., disk controllers, mount utilities).
+<!--ID: 1748147739120-->
+
+
+Q: Why must the kernel hand control to `init` (PID 1), and what happens if `/sbin/init` fails to load?
+A: `init` starts all user-space processes; if it fails, the system can't transition to user mode and the boot fails (e.g., kernel panic).
+<!--ID: 1748147739124-->
+
+
+Q: What role does `systemd` play in improving the boot process over traditional init systems?
+A: It starts services in parallel, tracks dependencies, reduces boot time, and provides tools for service management and logging.
+<!--ID: 1748147739127-->
+
+
+Q: In a system with a delayed login screen, what components might you inspect?
+A: The display manager (e.g., GDM), graphics driver initialization, and any failing `systemd` services that delay graphical login startup.
+<!--ID: 1748147739130-->
+

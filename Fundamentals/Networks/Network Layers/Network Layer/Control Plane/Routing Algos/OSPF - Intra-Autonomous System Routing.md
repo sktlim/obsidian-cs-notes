@@ -1,8 +1,3 @@
-> **Autonomous System (AS):** Routers organized into groups that are under same administrative control
-
-- Identified by globally unique **AS Number (ASN)** assigned by ICANN
-- Routing algorithms inside AS known as **intra-autonomous routing protocol**
-
 # Open Shortest Path First (OSPF)
 > Dynamic, **link-state routing protocol** used within an **Autonomous System (AS)** to determine the best path for routing IP packets. It is widely adopted in large enterprise and ISP networks due to its scalability, efficiency, and support for advanced features like hierarchical design.
 

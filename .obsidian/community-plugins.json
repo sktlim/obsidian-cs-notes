@@ -2,9 +2,9 @@
   "obsidian-importer",
   "obsidian-plugin-toc",
   "obsidian-latex-suite",
-  "obsidian-spaced-repetition",
   "obsidian-style-settings",
-  "templater-obsidian",
   "obsidian-underline",
-  "obsidian-git"
+  "obsidian-git",
+  "obsidian-to-anki-plugin",
+  "templater-obsidian"
 ]

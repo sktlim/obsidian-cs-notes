@@ -1,0 +1,64 @@
+- Executable (binary) programs need not be backed up if they can be reinstalled
+- Temporary directories should also not be backed up
+- Wasteful to backup files that have not changed since previous backup
+	- **Incremental Dumping**: Make complete dump periodically, and make daily dump of only files that have changed since previous backup
+	- Recovery more complicated, since full dump has to be restored first followed by daily dumps
+- Using compression algorithms on data to be dumped might be beneficial but if compression algo screws up, it might make an entire file/ backup system unreadable
+- Difficult to perform a backup on an active file system
+	- If files/directories changed during backup, resulting dump may be inconsistent
+	- Algorithms devised for making rapid snapshots of file system state by copying critical data structures, and then requiring future changes to files and directories to copy the blocks instead of updating them in place
+
+### Physical Dump
+- Starts at block 0, writes all disk blocks onto output disk in order, stops when it copied the last one
+- No value in backing up unused disk blocks, so they can be skipped. 
+	- But in that case skipping unused blocks requires writing number of blocks before it, as its no longer true that block $k$ on disk is the same as block $k$ on backup
+- Bad blocks pose an issue
+	- If bad blocks remapped by disk controlled and hidden by layer of abstraction from the OS, no issue
+	- Else, if OS can see bad blocks and bad blocks maintained in bitmaps/bad-block files, essential for dumping program to have access to this in order to prevent dumping bad blocks to prevent infinite disk read errors when trying to access bad block file
+- Dumping program needs to be aware of what files that are not required to be backed up
+- **Pros:** Simple and fast
+- **Cons:** Inability to skip selected directories, make incremental dumps, and restore individual files upon request
+- Most installations use logical dumps
+### Logical Dump
+- Starts at 1 or more specified directories and recursively dumps all files and directories found that have changed since some given base date 
+- Dump disk gets series of identified directories and files, making restoration of specified file/directory simple
+- Most UNIX systems use this algorithm
+	- ![[Logical dump file restoration.png]]
+	- Unshaded nodes need not be dumped
+	- Algo dumps all directories (including unmodified directories) that lie on path to modified file/directory
+		- This makes it possible to restore dumped files/directories onto a fresh file system
+		- Make it possible to incrementally restore a single file (recovery from user mistakes)
+			- If directory `abc/def` removed and user wants to restore `abc/def/ghi/ijk/text.json`, the subdirectories in `def` must be restored before `text.json` can be restored
+#### Dump Algorithm
+- Dump algorithm uses a bitmap indexed by inode number with several bits per inode
+- ![[Dump algorithm bitmap.png]]
+- Phase (a)
+	- Begins at root directory and examines all entries
+	- For each modified file, inode marked in bitmap
+	- Each directory also marked (whether or not it has been modified) and recursively inspected
+	- Marked inodes shown as shaded in bitmap
+- Phase (b)
+	- Recursively walks tree again, unmarking directories that no modified files/directories in them/under them
+	- Directories 10,11,14,27,29,30 unmarked because they contain nothing under them that has been modified
+- Phase (a) and (b) can be combined in 1 tree walk
+- Phase (c)
+	- Scan inodes in numerical order and dumps all directories marked for dumping
+	- Each directory prefixed by directory's attributes
+- Phase (d)
+	- Files marked are dumped in numerical order
+	- Each file prefixed by attribute
+
+- Restoration
+	- Empty fs created on disk
+	- Most recent full dump restored first
+	- Directories restored first to give skeleton, followed by files
+	- Incremental dumps restored in reverse order
+
+- **Issues:**
+	- Free block list not a file and not dumped, so must be reconstructed from scratch after all dumps have been restored
+	- If file linked to 2 or more directories, file should only be restored one time and directories that are supposed to point to it still do so
+	- UNIX files may contain holes
+		- Blocks in between are not part of file and should not be dumped and must not be restored
+		- Core dump files often have hole of hundred of MBs between data segment and stack
+		- If not handled properly, restored core file will fill this area with 0s and be same size as virtual address space
+	- Special files should never be dumped

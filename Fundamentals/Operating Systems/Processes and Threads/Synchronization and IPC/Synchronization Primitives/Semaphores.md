@@ -38,3 +38,10 @@ up(semaphore) {
 ```
 ## Usages
 - Used to solve [[Producer-Consumer Problem]]
+## Flashcards
+
+TARGET DECK: Operating Systems::Processes and Threads::Synchronization Primitives
+
+Q: How does a semaphore work?
+A: It has an integer variable acting as a counter to count how many threads has access to shared resources. The `up`/`signal` operation increments the semaphore, signaling that resource has been released. The `down`/`wait` operation checks if the semaphore is > 0. If yes, it decrements and allows process to continue, but if semaphore == 0, it blocks the process and queues it.
+<!--ID: 1748181369665-->

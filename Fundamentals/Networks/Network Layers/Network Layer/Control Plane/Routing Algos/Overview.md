@@ -3,6 +3,11 @@ Routing problems are basically graph problems
 - Edges represent physical link between routers
 - Cost represents length of link, link speed, or monetary cost associated with link
 
+> **Autonomous System (AS):** Routers organized into groups that are under same administrative control
+
+- Identified by globally unique **AS Number (ASN)** assigned by ICANN
+- Routing algorithms inside AS known as **intra-autonomous routing protocol**
+
 Types of routing algorithms
 - **Centralized routing algorithm**
 	- Computes least-cost path between source and destination using **complete, global knowledge** of network

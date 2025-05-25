@@ -51,3 +51,8 @@
 **Memory manager:** part of OS handling memory, allocation, deallocation
 
 **Memory protection keys:** Hardware feature that allows fast, software-controlled access permissions for memory pages. Each page can be assigned a protection key, and access rights for these keys are managed by a register (PKRU) without modifying page tables, enabling efficient, dynamic permission changes for groups of memory pages
+
+**Working Set:** Set of pages process is currently using
+
+**Thrashing:** Program causing page fault every few instructions
+

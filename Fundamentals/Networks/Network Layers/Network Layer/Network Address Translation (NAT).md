@@ -1,6 +1,6 @@
-> Modifies IP address information in packet headers as they pass through a router, allowing multiple devices on a private network to share a single public IP address. 
+> Modifies IP address information in packet headers as they pass through a router, allowing multiple devices on a **private network** to share a single public IP address. 
 > 
-> NAT is commonly used for conserving IPv4 addresses and providing a layer of security by masking internal IPs.
+> Network Address Translation (NAT) is commonly used for conserving IPv4 addresses and providing a layer of security by masking internal IPs.
 
 ![[NAT.png]]
 

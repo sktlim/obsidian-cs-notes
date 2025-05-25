@@ -40,7 +40,7 @@
 - Client then contacts TLD server, which returns IP address for Authoritative server for `www.google.com`
 
 - **Note:** There is another type of DNS server known as the **local DNS** server
-	- Each ISP has a local DNS server (aka default name server), and when a host connects to an ISP, the ISP provides host with IP address of 1 or more of its local DNS server through [[DHCP]] 
+	- Each ISP has a local DNS server (aka default name server), and when a host connects to an ISP, the ISP provides host with IP address of 1 or more of its local DNS server through [[Dynamic Host Configuration Protocol (DHCP)]] 
 	- Local DNS server acts a proxy to forward DNS requests from host 
 
 ![[Example DNS query.png|350]]![[Example DNS Query 2.png|344]]

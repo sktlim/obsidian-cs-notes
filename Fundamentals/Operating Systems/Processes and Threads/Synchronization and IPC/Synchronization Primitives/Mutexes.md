@@ -21,3 +21,10 @@ mutex_unlock:
 
 - For user threads, there is a difference between `enter_region` in [[Race conditions and Critical Region Solutions]] and mutexes. The former is controlled by the scheduler and is a form of **spinlock** while the latter typically calls `thread_yield` to give up CPU when it fails to acquire a lock
 - `mutex_lock` and `mutex_unlock` do not require kernel calls and are therefore fast
+
+## Flashcards
+
+TARGET DECK: Operating Systems::Processes and Threads::Synchronization Primitives
+
+Q: How would a mutex be implemented in user space?
+A: Use TSL/ XCHG instructions to ensure atomic access. Mutex lock function would use TSL to check and set mutex atomically. If mutex already locked, it yields thread and retries. Mutex unlock simply sets mutex back to 0 (doesn't need to be TSL), unlocking it.

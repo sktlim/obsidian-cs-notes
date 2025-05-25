@@ -2,6 +2,8 @@
 
 > Inodes themselves are stored on special area in disk called **inode table**. Table is typically allocated when filesystem is created 
 
+![[Inode Diagram.png|500]]
+
 - Each file or directory has a unique inode containing essential metadata
 - Inodes can be viewed using the `stat` command
 - Metadata includes

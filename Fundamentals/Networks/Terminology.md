@@ -23,3 +23,5 @@
 **hostname:**  google.com, facebook.com
 
 **Canonical hostname:** the official, fully qualified domain name (FQDN) associated with a host in the DNS system. It is the primary name by which the host is known, as opposed to any aliases (CNAME records) it may have.
+
+**Autonomous System (AS):** Routers organized into groups that are under same administrative control
