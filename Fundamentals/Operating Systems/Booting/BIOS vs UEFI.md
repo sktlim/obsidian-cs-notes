@@ -1,7 +1,6 @@
 The main difference between UEFI (Unified Extensible Firmware Interface) and BIOS (Basic Input/ Output System) lies in how they operate, the features they support, and the overall architecture they use. Here’s a breakdown of the key differences:
 
 ### 1. Architecture and Interface
-
    - **BIOS**:
      - BIOS is the older, legacy firmware interface that initializes hardware and loads the operating system.
      - It’s based on a 16-bit processor mode, which restricts it to 1 MB of executable space, limiting its features and speed.
@@ -61,7 +60,7 @@ The main difference between UEFI (Unified Extensible Firmware Interface) and BIO
 
    - **UEFI**:
      - UEFI can offer faster boot times because it doesn’t have to go through as many steps as BIOS and can access hardware more directly.
-     - Many UEFI systems implement features like “Fast Boot,” which bypasses certain POST checks for an even quicker startup.
+     - Many UEFI systems implement features like “[[Fast Boot]],” which bypasses certain POST checks for an even quicker startup.
 
 ### 7. Support for Modern Features
 
@@ -95,14 +94,8 @@ TARGET DECK: Operating Systems::Booting
 ## Flashcards
 
 Q: What architectural limitations make BIOS less powerful than UEFI?
-A: BIOS operates in 16-bit mode with only 1 MB of executable space, limiting speed and features.
+A: BIOS operates in 16-bit mode with only 1 MB of executable space, limiting speed and features, while UEFI operates in 32/64 bit.
 <!--ID: 1748147348097-->
-
-
-Q: Why does UEFI support richer interfaces compared to BIOS?
-A: UEFI runs in 32/64-bit mode and supports GUI and mouse input, unlike BIOS which is text-based and keyboard-only.
-<!--ID: 1748147348103-->
-
 
 Q: How does UEFI’s boot process eliminate the limitations of MBR used by BIOS?
 A: UEFI uses GPT, allowing disks >2 TB and more than four partitions, and can load OS kernels directly from the EFI System Partition.
@@ -133,3 +126,6 @@ Q: What allows UEFI to support remote diagnostics and pre-boot networking?
 A: UEFI has built-in networking capabilities, unlike BIOS which offers minimal or no network support.
 <!--ID: 1748147348118-->
 
+Q: Summarize the key differences between UEFI and BIOS.
+A: Bit mode, partition style, Fast Boot, Secure Boot and 2TB storage limit. 
+<!--ID: 1748183455171-->

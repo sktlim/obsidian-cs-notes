@@ -10,3 +10,4 @@
 	- Only 1 thread can execute a `synchronized` method of an object at any time
 - Java lacks built-in condition variables; instead, it uses `wait` and `notify` for thread communication.
 - These methods are only effective within synchronized methods, avoiding race conditions.
+

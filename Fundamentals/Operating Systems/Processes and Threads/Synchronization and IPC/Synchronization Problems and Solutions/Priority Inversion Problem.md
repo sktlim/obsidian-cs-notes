@@ -20,6 +20,7 @@
 	- Associate priority to mutex and assign that priority to process holding it
 	- As long as no process wanting to grab mutex has higher priority than the ceiling, inversion is not possible
 	- E.g. Assign mutex high priority. If low-priority process holds onto it, low-priority is assigned high priority. Medium priority can no longer grab it
+	- See [[Priority Ceiling]] for more info
 - **Priority Inheritance**
 	- Low priority task holding mutex will temporarily inherit priority of high priority task trying to obtain it
 	- No medium priority task will be able to preempt task holding mutex

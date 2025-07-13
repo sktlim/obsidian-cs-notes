@@ -4,7 +4,7 @@
 - [[First-In First-Out (FIFO) Page Replacement Algorithm]]
 - [[Least Recently Used (LRU) Page Replacement Algorithm]]
 - [[Not Recently Used (NRU) Page Replacement Algorithm]]
-- [[Overview]]
+- [[Fundamentals/Operating Systems/Memory Management/Virtual Memory/Page Replacement Algorithms/Overview]]
 - [[Second-Chance Page Replacement Algorithm]]
 - [[Working Set Page Replacement Algorithm]]
 

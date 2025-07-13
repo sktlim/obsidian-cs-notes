@@ -28,3 +28,4 @@ TARGET DECK: Operating Systems::Processes and Threads::Synchronization Primitive
 
 Q: How would a mutex be implemented in user space?
 A: Use TSL/ XCHG instructions to ensure atomic access. Mutex lock function would use TSL to check and set mutex atomically. If mutex already locked, it yields thread and retries. Mutex unlock simply sets mutex back to 0 (doesn't need to be TSL), unlocking it.
+<!--ID: 1748183455163-->

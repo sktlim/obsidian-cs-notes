@@ -93,3 +93,81 @@ Possible state diagram might be
 $$CPU \space Utilization = 1-p^n$$ where 
 $p$ is fraction of time process spends waiting for IO to complete and 
 $n$ is processes in memory at once
+
+## Flashcards
+
+TARGET DECK: Operating Systems::Processes
+
+Q: What are the four main triggers for process creation in an operating system?  
+A: System initialization, execution of a process-creation system call (e.g. fork), user request to create a new process, and the initialization of a batch job.
+<!--ID: 1748185966411-->
+
+
+Q: How does process termination differ between voluntary and involuntary scenarios?  
+A: Voluntary termination includes normal exit and error exit (graceful), while involuntary termination includes fatal errors like illegal memory access or being killed by another process.
+<!--ID: 1748185966414-->
+
+
+Q: Why do Unix systems maintain a strict process hierarchy, and how is it different from Windows?  
+A: Unix uses a single rooted tree structure with `init` as the root and does not allow disowning of child processes. Windows uses handles for parent-child interaction, which can be transferred, breaking strict hierarchy.
+<!--ID: 1748185966416-->
+
+
+Q: What are the three main process states in a simplified state diagram, and what differentiates them?  
+A: Running (actively using the CPU), Ready (runnable but not executing), and Blocked (waiting on external events like I/O).
+<!--ID: 1748185966419-->
+
+
+Q: What is the role of the process control block (PCB) in process management?  
+A: The PCB stores all information needed to track a process, including register contents, memory pointers, file descriptors, scheduling info, and identity data like process ID and user ID.
+<!--ID: 1748185966422-->
+
+
+Q: How does the operating system ensure that a process can resume correctly after an interrupt?  
+A: It saves the program counter and critical registers, loads the appropriate ISR from the interrupt vector, saves all CPU registers in assembly, and restores everything after handling the interrupt or switching context.
+<!--ID: 1748185966425-->
+
+
+Q: Describe the role of the assembly-level ISR after a C interrupt handler completes.  
+A: It restores saved registers, stack pointers, and the program counter, enabling the CPU to resume the interrupted process or switch to a new one based on scheduler decisions.
+<!--ID: 1748185966427-->
+
+
+Q: How does switching to a new stack during an interrupt help maintain process isolation?  
+A: It prevents overwriting the interrupted process’s stack, avoids corruption, and ensures that the interrupt has its own isolated space for temporary data and local variables.
+<!--ID: 1748185966430-->
+
+
+Q: Why is the scheduler invoked after an interrupt service routine completes, and what decisions does it make?  
+A: To determine whether to resume the interrupted process or switch to a higher-priority one, based on criteria like priority, time slices, and process states.
+<!--ID: 1748185966433-->
+
+
+Q: What is the function of the interrupt vector table during interrupt handling?  
+A: It stores the addresses of all ISR entry points, allowing the CPU to jump to the appropriate handler when a specific interrupt occurs.
+<!--ID: 1748185966435-->
+
+
+Q: Why is it necessary for the C ISR to signal the hardware device after handling input?  
+A: To acknowledge that the interrupt has been processed, allowing the device to continue operation and potentially raise new interrupts if needed.
+<!--ID: 1748185966438-->
+
+
+Q: Derive the formula for CPU utilization and explain what each variable represents.  
+A: CPU Utilization = 1 − pⁿ, where **p** is the fraction of time a process waits for I/O and **n** is the number of processes in memory. It models the probability that at least one process is ready to use the CPU.
+<!--ID: 1748185966441-->
+
+
+Q: What happens if the value of p approaches 1 in the CPU utilization formula?  
+A: CPU utilization drops significantly, indicating that processes are mostly waiting on I/O, leading to low overall CPU use.
+<!--ID: 1748185966444-->
+
+
+Q: Why does increasing the number of processes in memory (n) improve CPU utilization, according to the formula?  
+A: It increases the likelihood that at least one process is ready to run while others are waiting on I/O, keeping the CPU busy more consistently.
+<!--ID: 1748185966450-->
+
+
+Q: What risk is introduced by an increasing number of processes in memory despite improved CPU utilization?  
+A: Higher memory contention, increased context switching overhead, and possible thrashing if memory is overcommitted.
+<!--ID: 1748185966454-->

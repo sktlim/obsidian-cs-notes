@@ -1,9 +1,7 @@
-> Fast user space mutex
+> Fast user space mutex. User space is preferred to avoid syscall overheads so futex does this by using user space as much as possible and entering kernel only when necessary
 
 - **Lock contention:** Multiple threads trying to acquire the lock at the same time
-- **Linux** feature that allows threads to involve syscalls when there is no contention, and only involve kernel in cases where threads are forced to wait; Low level enough that it probably won't be used by most users
-- **Key idea:** Thread is popular $\rightarrow$ use kernel, thread is a nerd $\rightarrow$ use user space
-
+- **Linux** feature that allows threads to avoid syscalls when there is no contention, and only involve kernel in cases where threads are forced to wait; Low level enough that it probably won't be used by most users
 ## How it works
 - **Fast Path (User Space)**:
     - When a thread tries to acquire a futex, it first checks the futex’s integer value in **user space**. If the `futex == 0` meaning its free, it simply changes this value (e.g., to 1 to indicate the lock is taken) and proceeds.
